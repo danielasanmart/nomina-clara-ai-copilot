@@ -5,7 +5,7 @@ import { VolumeChart } from '@/components/dashboard/VolumeChart';
 import { KnowledgeGaps } from '@/components/dashboard/KnowledgeGaps';
 import { RepetitivePatterns } from '@/components/dashboard/RepetitivePatterns';
 import { AgentTable } from '@/components/dashboard/AgentTable';
-import { formatMTTR, formatConfidence } from '@/lib/utils';
+import { formatConfidence } from '@/lib/utils';
 
 const m = mockDashboardMetrics;
 
@@ -33,14 +33,14 @@ export default function DashboardPage() {
         {/* KPIs row */}
         <div className="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
           <MetricCard
-            label="MTTR Promedio"
-            value={formatMTTR(m.mttrAvg)}
-            trend={Math.abs(m.mttrTrend)}
-            trendPositiveIsGood={false}
-            trendLabel="reducción vs mes anterior"
+            label="ANS (Nivel de Servicio)"
+            value={`${m.ansCompliance}% cumplimiento`}
+            subvalue="tickets resueltos en ≤ 2 horas"
+            trend={m.ansTrend}
+            trendLabel="vs mes anterior"
             icon={
               <svg viewBox="0 0 20 20" fill="currentColor" className="size-4">
-                <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clipRule="evenodd" />
+                <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd" />
               </svg>
             }
           />

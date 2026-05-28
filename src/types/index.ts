@@ -55,6 +55,8 @@ export interface FeedbackPayload {
 export interface DashboardMetrics {
   mttrAvg: number;
   mttrTrend: number; // % change
+  ansCompliance: number; // % of tickets resolved within 2 hours (ANS threshold)
+  ansTrend: number; // % change vs previous period
   totalTickets: number;
   resolvedTickets: number;
   escalatedTickets: number;

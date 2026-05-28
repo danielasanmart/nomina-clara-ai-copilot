@@ -97,6 +97,8 @@ export const mockTickets: Ticket[] = [
 export const mockDashboardMetrics: DashboardMetrics = {
   mttrAvg: 312,
   mttrTrend: -18,
+  ansCompliance: 68, // 68% of tickets resolved within 2 hours (120 min)
+  ansTrend: 5,
   totalTickets: 847,
   resolvedTickets: 712,
   escalatedTickets: 34,
